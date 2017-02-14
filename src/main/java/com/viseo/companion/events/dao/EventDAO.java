@@ -32,7 +32,7 @@ public class EventDAO {
 		Event event = new Event();		
 		event.setDate(date);
 		event.setDescription(description);
-		event.setEvent(eventname);
+		event.setName(eventname);
 		event.setLieu(lieu);
 		event.setMotclefs(motclefs);
 		em.persist(event);		

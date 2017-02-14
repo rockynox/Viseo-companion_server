@@ -24,7 +24,7 @@ public class Event implements java.io.Serializable
 	private long id;
 	@Version
 	private long version;
-	private String event;
+	private String name;
 	private Date date;
 	private String description;
 	private String motclefs;
@@ -35,8 +35,8 @@ public class Event implements java.io.Serializable
 	public Event() {
 	}
 	
-	public Event(String event,Date date,String description,String motclefs,String lieu){
-		this.event=event;
+	public Event(String name, Date date, String description, String motclefs, String lieu){
+		this.name = name;
 		this.date=date;
 		this.description=description;
 		this.motclefs=motclefs;
@@ -47,8 +47,8 @@ public class Event implements java.io.Serializable
 		return id;
 	}
 	
-	public String getEvent() {
-		return this.event;
+	public String getName() {
+		return this.name;
 	}
 	
 	public Date getDate(){	
@@ -67,8 +67,8 @@ public class Event implements java.io.Serializable
 		return this.lieu;
 	}
 	
-	public void setEvent(String event){	
-		this.event=event;
+	public void setName(String event){
+		this.name =event;
 	}
 	
 	public void setDate(Date date){	
