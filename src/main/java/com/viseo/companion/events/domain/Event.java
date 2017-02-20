@@ -25,22 +25,22 @@ public class Event implements java.io.Serializable
 	@Version
 	private long version;
 	private String name;
-	private Date date;
+	private Date datetime;
 	private String description;
-	private String motclefs;
-	private String lieu;
+	private String keyWords;
+	private String place;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.event", cascade = CascadeType.ALL)
 	private Set<AccountEvent> accountEvents = new HashSet<AccountEvent>();
 	
 	public Event() {
 	}
 	
-	public Event(String name, Date date, String description, String motclefs, String lieu){
+	public Event(String name, Date date, String description, String keyWords, String place){
 		this.name = name;
-		this.date=date;
-		this.description=description;
-		this.motclefs=motclefs;
-		this.lieu=lieu;
+		this.datetime = date;
+		this.description= description;
+		this.keyWords = keyWords;
+		this.place = place;
 	}
 
 	public long getId() {
@@ -51,40 +51,40 @@ public class Event implements java.io.Serializable
 		return this.name;
 	}
 	
-	public Date getDate(){	
-		return this.date;
+	public Date getDatetime(){
+		return this.datetime;
 	}
 	
 	public String getDescription(){
 		return description;
 	}
 	
-	public String getMotclefs(){
-		return this.motclefs;
+	public String getKeyWords(){
+		return this.keyWords;
 	}
 
-	public String getLieu(){
-		return this.lieu;
+	public String getPlace(){
+		return this.place;
 	}
 	
 	public void setName(String event){
 		this.name =event;
 	}
 	
-	public void setDate(Date date){	
-		this.date=date;
+	public void setDatetime(Date date){
+		this.datetime =date;
 	}
 	
 	public void setDescription(String description){
 		this.description=description;
 	}
 	
-	public void setMotclefs(String motclefs){	
-		this.motclefs=motclefs;
+	public void setKeyWords(String motclefs){
+		this.keyWords =motclefs;
 	}
 	
-	public void setLieu(String lieu){
-		this.lieu=lieu;
+	public void setPlace(String lieu){
+		this.place =lieu;
 	}
 
 	@JsonBackReference

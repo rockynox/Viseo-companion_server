@@ -28,13 +28,13 @@ public class EventDAO {
 	}
 
 	@Transactional
-	public void addEvent(String eventname,Date date,String description,String motclefs,String lieu){		
+	public void addEvent(String name, Date date, String description, String KeyWords, String place){
 		Event event = new Event();		
-		event.setDate(date);
+		event.setDatetime(date);
 		event.setDescription(description);
-		event.setName(eventname);
-		event.setLieu(lieu);
-		event.setMotclefs(motclefs);
+		event.setName(name);
+		event.setPlace(place);
+		event.setKeyWords(KeyWords);
 		em.persist(event);		
 	}
 
@@ -54,6 +54,6 @@ public class EventDAO {
 	}
 
 	public List<Event> GetAllEvent() {
-		return em.createQuery("select a from Event a order by a.date", Event.class).getResultList();
+		return em.createQuery("select a from Event a order by a.datetime", Event.class).getResultList();
 	}
 }

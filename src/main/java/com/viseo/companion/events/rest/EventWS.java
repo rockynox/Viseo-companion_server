@@ -25,9 +25,7 @@ public class EventWS {
 	@CrossOrigin
 	@RequestMapping(value = "${endpoint.addEvent}", method = RequestMethod.POST)
     @ResponseBody
-    public void addEvent(@Valid @RequestBody Event myEvent, BindingResult bindingResult){
-			eventDAO.addEvent(myEvent);
-    }
+    public void addEvent(@Valid @RequestBody Event myEvent, BindingResult bindingResult){eventDAO.addEvent(myEvent);}
 	
 	@RequestMapping(value = "${endpoint.readEvent}", method = RequestMethod.GET)
 	@ResponseBody
