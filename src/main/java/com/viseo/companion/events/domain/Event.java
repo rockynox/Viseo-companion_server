@@ -24,6 +24,7 @@ public class Event implements java.io.Serializable
 	private long id;
 	@Version
 	private long version;
+	private long category;
 	private String name;
 	private Date datetime;
 	private String description;
@@ -41,10 +42,15 @@ public class Event implements java.io.Serializable
 		this.description= description;
 		this.keyWords = keyWords;
 		this.place = place;
+		this.category = 0;
 	}
 
 	public long getId() {
 		return id;
+	}
+
+	public long getCategory() {
+		return category;
 	}
 	
 	public String getName() {
@@ -65,6 +71,10 @@ public class Event implements java.io.Serializable
 
 	public String getPlace(){
 		return this.place;
+	}
+
+	public void setCategory(long category) {
+		this.category = category;
 	}
 	
 	public void setName(String event){
