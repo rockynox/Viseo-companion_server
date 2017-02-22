@@ -75,15 +75,15 @@ public class AccountWS {
 			return true;
     }
 	
-	@RequestMapping(value = "${endpoint.getParticipation}", method = RequestMethod.GET)
-    @ResponseBody
-    public boolean getParticipationAccountEvent(@PathVariable("idAccount") long idAccount,@PathVariable("idEvent") long idEvent){
-		return accountDAO.getParticipation(idAccount,idEvent);
-	}
+//	@RequestMapping(value = "${endpoint.getParticipation}", method = RequestMethod.GET)
+//    @ResponseBody
+//    public boolean getParticipationAccountEvent(@PathVariable("idAccount") long idAccount,@PathVariable("idEvent") long idEvent){
+//		return accountDAO.getParticipation(idAccount,idEvent);
+//	}
 	
-	@RequestMapping(value = "${endpoint.doneParticipation}", method = RequestMethod.GET)
+	@RequestMapping(value = "${endpoint.isUserGoingToEvent}", method = RequestMethod.GET)
     @ResponseBody
-    public boolean isAllreadySetParticipation(@PathVariable("idAccount") long idAccount,@PathVariable("idEvent") long idEvent){
+    public boolean isAllreadySetParticipation(@PathVariable("userId") long idAccount,@PathVariable("eventId") long idEvent){
 		return accountDAO.isSetParticipation(idAccount,idEvent);
 	}
 }

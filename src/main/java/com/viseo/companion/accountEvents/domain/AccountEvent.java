@@ -18,8 +18,7 @@ import com.viseo.companion.events.domain.Event;
             joinColumns = @JoinColumn())})
 public class AccountEvent implements java.io.Serializable {
 	private AccountEventID pk = new AccountEventID();
-	private boolean participation;
-	
+
 	@EmbeddedId
 	public AccountEventID getPk(){
 		return pk;
@@ -44,11 +43,11 @@ public class AccountEvent implements java.io.Serializable {
 	public void setPk(AccountEventID pk){
 		this.pk=pk;
 	}
-	
-	public boolean isParticipated() {
-		return participation;
-	}
-	public void setParticipated(boolean participation) {
-		this.participation = participation;
-	}
+
+//	public boolean isParticipated() {
+//		return participation;
+//	}
+//	public void setParticipated(boolean participation) {
+//		this.participation = participation;
+//	}
 }

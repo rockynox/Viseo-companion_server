@@ -95,15 +95,15 @@ public class AccountDAO {
 		accountEvent.setAccount(account);	//set account in the join table
 		Event event=em.find(Event.class, idEvent);
 		accountEvent.setEvent(event);
-		accountEvent.setParticipated(participation);	//set participate the event
+//		accountEvent.setParticipated(participation);	//set participate the event
 		em.merge(accountEvent);
 	}
 	
-	@Transactional
-	public boolean getParticipation(long idAccount,long idEvent){
-		Collection<AccountEvent> list = getAccountEventById(idAccount,idEvent);
-		return list.iterator().next().isParticipated();
-	}
+//	@Transactional
+//	public boolean getParticipation(long idAccount,long idEvent){
+//		Collection<AccountEvent> list = getAccountEventById(idAccount,idEvent);
+////		return list.iterator().next().isParticipated();
+//	}
 	
 	@Transactional
 	public boolean isSetParticipation(long idAccount,long idEvent){
